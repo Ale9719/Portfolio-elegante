@@ -25,7 +25,7 @@ const personalProjects = [
     title: "Fallout UI", 
     desc: "Portfolio sperimentale retro-futurista.", 
     tags: ["React", "Tailwind"],
-    url: "https://ale9719.github.io/Portfolio-fallout"
+    url: "https://Ale9719.github.io/Portfolio-fallout"
   }
 ];
 
