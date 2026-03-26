@@ -1,0 +1,33 @@
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;700;800&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --color-rose-gold: #e5b1a1;
+  --color-rose-gold-dark: #b58373;
+  --color-slate-950: #020617;
+  --font-sans: 'Plus Jakarta Sans', ui-sans-serif, system-ui;
+}
+
+
+@layer base {
+  body {
+    @apply bg-slate-950 text-slate-100 antialiased overflow-x-hidden;
+  }
+}
+
+@layer components {
+  /* Bottone CV adattivo: sparisce il testo su mobile, resta l'icona */
+  .btn-rose-metallic {
+    @apply relative overflow-hidden bg-linear-to-br from-rose-gold via-[#f4d0c5] to-rose-gold-dark 
+           text-slate-950 p-2.5 md:px-6 md:py-2.5 rounded-full font-bold text-sm flex items-center gap-2 
+           transition-all duration-300 shadow-[0_0_20px_rgba(229,177,161,0.2)];
+  }
+
+  .btn-rose-metallic::after {
+    content: '';
+    @apply absolute top-0 -left-full w-full h-full bg-linear-to-r from-transparent via-white/40 to-transparent 
+           skew-x-[-25deg] transition-all duration-500;
+  }
+
+  .btn-rose-metallic:hover::after { @apply left-[150%]; }
+}
